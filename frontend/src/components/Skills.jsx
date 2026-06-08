@@ -35,24 +35,24 @@ function SkillSphere({ skill, index, hoveredId, setHoveredId }) {
 
     // 1. Magnetic Repulsion from Cursor
     const spherePos = rigidBody.current.translation();
-    // Scale pointer to match new wider camera frustum (from * 6 to * 10)
-    const pointer = new THREE.Vector3(state.pointer.x * 10, state.pointer.y * 10, 0);
+    // Scale pointer to match zoomed in camera frustum (from * 10 down to * 7)
+    const pointer = new THREE.Vector3(state.pointer.x * 7, state.pointer.y * 7, 0);
     const dist = pointer.distanceTo(new THREE.Vector3(spherePos.x, spherePos.y, spherePos.z));
 
     if (dist < 4.0) {
       const dir = new THREE.Vector3().subVectors(new THREE.Vector3(spherePos.x, spherePos.y, spherePos.z), pointer).normalize();
-      const force = (4.0 - dist) * 20; 
+      const force = (4.0 - dist) * 18; 
       rigidBody.current.applyImpulse({ x: dir.x * force, y: dir.y * force, z: dir.z * force }, true);
     }
 
     // 2. Gentle Drift back to center
-    const centerForce = new THREE.Vector3().subVectors(new THREE.Vector3(0, 0, 0), new THREE.Vector3(spherePos.x, spherePos.y, spherePos.z)).multiplyScalar(6.0); 
+    const centerForce = new THREE.Vector3().subVectors(new THREE.Vector3(0, 0, 0), new THREE.Vector3(spherePos.x, spherePos.y, spherePos.z)).multiplyScalar(7.0); 
     // In Rapier v1, we must explicitly pass a plain object {x, y, z}
     rigidBody.current.applyImpulse({ x: centerForce.x, y: centerForce.y, z: centerForce.z }, true);
 
     // 3. Damping to prevent infinite bouncing
     const velocity = rigidBody.current.linvel();
-    rigidBody.current.setLinvel({ x: velocity.x * 0.95, y: velocity.y * 0.95, z: velocity.z * 0.95 }, true);
+    rigidBody.current.setLinvel({ x: velocity.x * 0.94, y: velocity.y * 0.94, z: velocity.z * 0.94 }, true);
   });
 
   return (
@@ -183,7 +183,7 @@ const Skills = () => {
             transition={{ duration: 0.9 }}
             className="lg:col-span-5 relative aspect-square w-full max-w-md mx-auto rounded-3xl bg-gradient-to-br from-[#1a0f2e] to-[#0f1840] ring-1 ring-white/10 overflow-hidden"
           >
-            <Canvas dpr={[1, 1.6]} camera={{ position: [0, 0, 12], fov: 45 }} gl={{ alpha: true, antialias: true }}>
+            <Canvas dpr={[1, 1.6]} camera={{ position: [0, 0, 9], fov: 45 }} gl={{ alpha: true, antialias: true }}>
               <Suspense fallback={null}>
                 <SkillsScene />
               </Suspense>
