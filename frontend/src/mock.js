@@ -77,7 +77,7 @@ export const projects = [
     category: "3D WEB DEVELOPMENT",
     year: "2026",
     description: "A next-generation interactive portfolio featuring real-time 3D physics, dynamic cursor lighting, and optimized WebGL rendering. Designed to push the boundaries of modern web aesthetics and performance.",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
+    image: "/projects/3d_portfolio.png",
     tech: ["React 18", "Three.js", "React Three Fiber", "Rapier Physics", "Tailwind CSS"],
     metrics: { "PHYSICS ENGINE": "RAPIER V1", "RENDERING": "WEBGL 2.0", "PERFORMANCE": "60 FPS", "LIGHTING": "DYNAMIC PBR" },
     isInProgress: false,
