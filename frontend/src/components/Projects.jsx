@@ -120,7 +120,7 @@ function TiltCard({ project, index }) {
 const Projects = () => {
   return (
     <section id="work" className="relative py-28 lg:py-36">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
         <div className="flex items-end justify-between flex-wrap gap-6">
           <div>
             <div className="flex items-center gap-3 text-xs tracking-[0.3em] uppercase text-[#9d8fb5]">
@@ -139,7 +139,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {projects.map((p, i) => (
             <TiltCard key={p.id} project={p} index={i} />
           ))}
