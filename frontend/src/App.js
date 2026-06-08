@@ -13,6 +13,7 @@ import Testimonials from "./components/Testimonials";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ParticleBackground from "./components/three/ParticleBackground";
 
 function CursorBlob() {
   const ref = useRef(null);
@@ -42,10 +43,13 @@ function CursorBlob() {
 
 const Home = () => {
   return (
-    <div className="relative bg-[#0a0612] text-[#ece4f5] noise-overlay">
+    <div className="relative text-[#ece4f5] noise-overlay">
       <CursorBlob />
-      <Navbar />
-      <main>
+      <div className="relative z-20">
+        <Navbar />
+      </div>
+      <ParticleBackground />
+      <main className="relative z-10">
         <Hero />
         <About />
         <Projects />
@@ -55,7 +59,9 @@ const Home = () => {
         <Blog />
         <Contact />
       </main>
-      <Footer />
+      <div className="relative z-20">
+        <Footer />
+      </div>
       <Toaster />
     </div>
   );

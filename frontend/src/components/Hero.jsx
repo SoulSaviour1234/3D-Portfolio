@@ -5,20 +5,11 @@ import HeroScene from "./three/HeroScene";
 import { profile } from "../mock";
 
 const marqueeWords = [
-  "Distributed Systems",
-  "•",
-  "Edge Compute",
-  "•",
-  "Developer Experience",
-  "•",
-  "Rust",
-  "•",
-  "Go",
-  "•",
-  "TypeScript",
-  "•",
-  "Performance Engineering",
-  "•"
+  "React", "•", "Next.js", "•", "Supabase", "•", "Node.js", "•", "WebSockets", "•", 
+  "Tailwind CSS", "•", "Python", "•", "REST APIs", "•", "Database Normalization", "•", 
+  "HTML", "•", "Firebase", "•", "NeonDB", "•", "Java", "•", "C", "•", "C++", "•", 
+  "TensorFlow", "•", "Keras", "•", "Anaconda", "•", "Jupyter Notebook", "•", 
+  "Google Auth", "•", "Vercel", "•", "HuggingFace", "•", "Netlify", "•"
 ];
 
 const Hero = () => {
@@ -42,7 +33,7 @@ const Hero = () => {
           className="flex items-center gap-3 text-xs tracking-[0.3em] uppercase text-[#9d8fb5]"
         >
           <span className="h-px w-10 bg-[#c9a875]/60" />
-          Available for principal & staff roles — 2025
+          Open to internships & hackathon collaborations — 2026
         </motion.div>
 
         <motion.h1
@@ -67,7 +58,7 @@ const Hero = () => {
           className="mt-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8"
         >
           <p className="max-w-md text-[#cdbfe1]/85 leading-relaxed text-base">
-            Hi, I'm <span className="text-[#e3c490]">{profile.name}</span>— a software engineer crafting infrastructure, edge platforms, and developer tools that scale to millions.
+            Hi, I'm <span className="text-[#e3c490]">{profile.name}</span>— the ultimate developer crafting responsive interfaces and scalable backends using modern tools like React, Node.js, Supabase and many more.
           </p>
 
           <div className="flex items-center gap-3">

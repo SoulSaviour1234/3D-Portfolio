@@ -23,8 +23,8 @@ const Navbar = () => {
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3 group">
-          <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-md bg-gradient-to-br from-[#3d2d63] to-[#1e2a5e] ring-1 ring-white/10">
-            <span className="font-display text-lg text-[#e3c490] leading-none">R</span>
+          <span className="relative inline-flex h-9 w-9 items-center justify-center">
+            <img src="/Srijit.png" alt="Srijit Paul" className="h-9 w-9 rounded-md object-cover ring-1 ring-white/10" />
             <span className="absolute -bottom-1 -right-1 h-2 w-2 rounded-full bg-[#c9a875] animate-pulse" />
           </span>
           <div className="flex flex-col leading-tight">

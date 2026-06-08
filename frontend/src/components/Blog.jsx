@@ -15,25 +15,21 @@ const Blog = () => {
               Writing
             </div>
             <h2 className="mt-6 font-display text-4xl lg:text-6xl leading-[1.05] tracking-tight text-balance max-w-3xl">
-              Notes from the trenches of
-              <span className="italic text-[#c9a875]"> production.</span>
+              Documenting the architecture of
+              <span className="italic text-[#c9a875]"> intelligent systems.</span>
             </h2>
           </div>
-          <a
-            href="#"
-            data-cursor="hover"
-            className="inline-flex items-center gap-2 text-sm text-[#cdbfe1] hover:text-[#e3c490] link-underline"
+          <span
+            className="inline-flex items-center gap-2 text-sm text-[#cdbfe1] opacity-50 cursor-not-allowed"
           >
             View all essays <ArrowUpRight size={16} />
-          </a>
+          </span>
         </div>
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {blog.map((b, i) => (
-            <motion.a
+            <motion.div
               key={b.id}
-              href="#"
-              data-cursor="hover"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
@@ -44,7 +40,7 @@ const Blog = () => {
                 <img
                   src={b.image}
                   alt={b.title}
-                  className="absolute inset-0 h-full w-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
+                  className={`absolute inset-0 h-full w-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700 ${b.objectPosition || "object-center"}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0612]/85 via-[#0a0612]/30 to-transparent" />
                 <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#0a0612]/70 backdrop-blur ring-1 ring-[#c9a875]/30">
@@ -61,12 +57,12 @@ const Blog = () => {
                   {b.title}
                 </h3>
                 <p className="mt-3 text-sm text-[#cdbfe1]/70 leading-relaxed flex-1">{b.excerpt}</p>
-                <div className="mt-5 inline-flex items-center gap-2 text-sm text-[#c9a875]">
+                <div className="mt-5 inline-flex items-center gap-2 text-sm text-[#c9a875] opacity-50 cursor-not-allowed">
                   Read essay
                   <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>

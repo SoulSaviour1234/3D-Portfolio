@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { Quote, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { testimonials } from "../mock";
 
 const Testimonials = () => {
@@ -43,16 +43,31 @@ const Testimonials = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.4 }}
-                className="flex items-center gap-4"
               >
-                <img
-                  src={t.avatar}
-                  alt={t.name}
-                  className="h-14 w-14 rounded-full ring-2 ring-[#c9a875]/40 object-cover"
-                />
-                <div>
-                  <div className="text-[#ece4f5] font-medium">{t.name}</div>
-                  <div className="text-sm text-[#9d8fb5]">{t.role}</div>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={t.avatar}
+                      alt={t.name}
+                      className="h-14 w-14 rounded-full ring-2 ring-[#c9a875]/40 object-cover"
+                    />
+                    <div>
+                      <div className="text-[#ece4f5] font-medium">{t.name}</div>
+                      <div className="text-sm text-[#9d8fb5]">{t.role}</div>
+                    </div>
+                  </div>
+                  
+                  {t.link && (
+                    <a
+                      href={t.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-cursor="hover"
+                      className="group inline-flex items-center gap-2 px-4 py-2 rounded-md font-mono text-xs tracking-widest text-[#e3c490] ring-1 ring-[#c9a875]/30 bg-[#c9a875]/5 hover:bg-[#c9a875]/15 hover:ring-[#c9a875]/60 transition-all duration-300"
+                    >
+                      Connect <ExternalLink size={12} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  )}
                 </div>
               </motion.div>
             </AnimatePresence>
