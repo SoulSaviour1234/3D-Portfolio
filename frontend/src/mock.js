@@ -81,7 +81,7 @@ export const projects = [
     tech: ["React 18", "Three.js", "React Three Fiber", "Rapier Physics", "Tailwind CSS"],
     metrics: { "PHYSICS ENGINE": "RAPIER V1", "RENDERING": "WEBGL 2.0", "PERFORMANCE": "60 FPS", "LIGHTING": "DYNAMIC PBR" },
     isInProgress: false,
-    link: "https://github.com/SoulSaviour1234/3D-Portfolio"
+    link: "https://raajpakhi.vercel.app/"
   },
   {
     id: "p4",
