@@ -14,9 +14,9 @@ import { profile } from "../mock";
 //    Template variables to use: {{from_name}}, {{from_email}}, {{message}}, {{to_name}}
 // 4. "Account" → API Keys → Copy your Public Key
 // ─────────────────────────────────────────────────────────────────────────────
-const EMAILJS_SERVICE_ID  = "service_b00pxu6";
-const EMAILJS_TEMPLATE_ID = "template_evg0z6q";
-const EMAILJS_PUBLIC_KEY  = "kPwk_WVqQqtPkiTZz";
+const EMAILJS_SERVICE_ID  = process.env.REACT_APP_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
+const EMAILJS_PUBLIC_KEY  = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
 
 const IS_CONFIGURED =
   EMAILJS_SERVICE_ID  !== "YOUR_SERVICE_ID" &&
