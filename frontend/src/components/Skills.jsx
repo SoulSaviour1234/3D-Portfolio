@@ -183,7 +183,12 @@ const Skills = () => {
             transition={{ duration: 0.9 }}
             className="lg:col-span-5 relative aspect-square w-full max-w-md mx-auto rounded-3xl bg-gradient-to-br from-[#1a0f2e] to-[#0f1840] ring-1 ring-white/10 overflow-hidden"
           >
-            <Canvas dpr={[1, 1.6]} camera={{ position: [0, 0, 9], fov: 45 }} gl={{ alpha: true, antialias: true }}>
+            <Canvas 
+              dpr={[1, 1.6]} 
+              camera={{ position: [-1.5, 1.5, 9], fov: 45 }} 
+              gl={{ alpha: true, antialias: true }}
+              onCreated={({ camera }) => camera.lookAt(0, 0, 0)}
+            >
               <Suspense fallback={null}>
                 <SkillsScene />
               </Suspense>
