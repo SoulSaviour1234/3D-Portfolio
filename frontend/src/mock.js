@@ -73,15 +73,15 @@ export const projects = [
   },
   {
     id: "p3",
-    title: "System Architecture — [REDACTED]",
-    category: "ARCHITECTURE IN DEVELOPMENT",
+    title: "Raajpakhi 3D — Immersive Web Experience",
+    category: "3D WEB DEVELOPMENT",
     year: "2026",
-    description: "Currently engineering a new full-stack system. Details, metrics, and architecture diagrams will be unlocked upon final deployment.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
-    tech: [],
-    metrics: {},
-    isInProgress: true,
-    link: "#"
+    description: "A next-generation interactive portfolio featuring real-time 3D physics, dynamic cursor lighting, and optimized WebGL rendering. Designed to push the boundaries of modern web aesthetics and performance.",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
+    tech: ["React 18", "Three.js", "React Three Fiber", "Rapier Physics", "Tailwind CSS"],
+    metrics: { "PHYSICS ENGINE": "RAPIER V1", "RENDERING": "WEBGL 2.0", "PERFORMANCE": "60 FPS", "LIGHTING": "DYNAMIC PBR" },
+    isInProgress: false,
+    link: "https://github.com/SoulSaviour1234/3D-Portfolio"
   },
   {
     id: "p4",
