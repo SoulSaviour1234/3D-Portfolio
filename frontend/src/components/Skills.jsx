@@ -40,17 +40,18 @@ function SkillSphere({ skill, index, hoveredId, setHoveredId }) {
 
     if (dist < 3.5) {
       const dir = new THREE.Vector3().subVectors(new THREE.Vector3(spherePos.x, spherePos.y, spherePos.z), pointer).normalize();
-      const force = (3.5 - dist) * 45;
+      const force = (3.5 - dist) * 25; // slightly reduced force
       rigidBody.current.applyImpulse({ x: dir.x * force, y: dir.y * force, z: dir.z * force }, true);
     }
 
     // 2. Gentle Drift back to center
-    const centerForce = new THREE.Vector3().subVectors(new THREE.Vector3(0, 0, 0), new THREE.Vector3(spherePos.x, spherePos.y, spherePos.z)).multiplyScalar(2.5);
-    rigidBody.current.applyImpulse(centerForce, true);
+    const centerForce = new THREE.Vector3().subVectors(new THREE.Vector3(0, 0, 0), new THREE.Vector3(spherePos.x, spherePos.y, spherePos.z)).multiplyScalar(4.0); // stronger pull
+    // In Rapier v1, we must explicitly pass a plain object {x, y, z}
+    rigidBody.current.applyImpulse({ x: centerForce.x, y: centerForce.y, z: centerForce.z }, true);
 
     // 3. Damping to prevent infinite bouncing
     const velocity = rigidBody.current.linvel();
-    rigidBody.current.setLinvel({ x: velocity.x * 0.93, y: velocity.y * 0.93, z: velocity.z * 0.93 }, true);
+    rigidBody.current.setLinvel({ x: velocity.x * 0.90, y: velocity.y * 0.90, z: velocity.z * 0.90 }, true);
   });
 
   return (
